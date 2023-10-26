@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
 import {Btn} from "../../../common/Btn";
 
+
+
 export const Users = () => {
 
-    interface AllUsers {
-        id: string;
-        firstName: string;
-        lastName: string;
-        email: string;
-    }
+
 
     const [allUsers, setAllUsers] = useState([
         {
