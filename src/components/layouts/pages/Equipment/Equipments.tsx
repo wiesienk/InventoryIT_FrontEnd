@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Btn} from "../../../common/Btn";
 
-export const Equipment = () => {
+export const Equipments = () => {
 
     interface Equipment{
         id: string;
@@ -34,7 +34,7 @@ export const Equipment = () => {
 
     return(
         <>
-            <Btn text="Dodaj nowy sprzęt"/>
+            <Btn text="Dodaj nowy sprzęt" to="add-equipment"/>
             <table className="table">
                 <thead>
                 <tr>
