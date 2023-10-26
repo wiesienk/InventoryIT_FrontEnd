@@ -31,7 +31,7 @@ export const Users = () => {
 
     return(
         <>
-            <Btn text="Dodaj nowego uzytkonika"/>
+            <Btn text="Dodaj nowego uzytkonika" to="add-user"/>
             <table className="table">
                 <thead>
                 <tr>

@@ -6,9 +6,9 @@ export const Header = () => {
         <header className="header">
             <h1 className="header__title">Ewidencja sprzętu IT</h1>
             <div className="header__buttons">
-                <Btn text="Wyposażenie"/>
-                <Btn text="Użytkownicy"/>
-                <Btn text="Wyloguj"/>
+                <Btn text="Wyposażenie" to="/equipment"/>
+                <Btn text="Użytkownicy" to="/users"/>
+                <Btn text="Wyloguj" to="logout"/>
             </div>
         </header>
     )
