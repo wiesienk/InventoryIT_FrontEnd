@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "types": [
+        "../../InventoryIT_BackEnd/inventory-it_be/src/types"
+      ]
+    }
+  }
+}
