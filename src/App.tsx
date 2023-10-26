@@ -1,13 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Header} from "./components/layouts/Header/Header";
+import {Equipment} from "./components/layouts/pages/Equipment/Equipment";
+import {Users} from "./components/layouts/pages/Users/Users";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>InventoryIT</h1>
-    </div>
-  );
+
+
+export const App = () => {
+   return (
+       <>
+           <Header/>
+           <Equipment/>
+           <Users/>
+      </>
+   )
 }
 
-export default App;
+
+
+
+
