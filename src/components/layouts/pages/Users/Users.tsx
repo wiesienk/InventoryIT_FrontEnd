@@ -38,6 +38,7 @@ export const Users = () => {
                         <td>{item.firstName}</td>
                         <td>{item.lastName}</td>
                         <td>{item.email}</td>
+                        <td><Btn text="ℹ️" to={`/users/${item.id}`}/></td>
                     </tr>
                 ))}
                 </tbody>
