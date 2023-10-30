@@ -1,33 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Btn} from "../../../common/Btn";
+import {AllUsersResponse} from "types"
 
 
 
 export const Users = () => {
 
 
+    const [allUsers, setAllUsers] = useState<AllUsersResponse[]>([])
 
-    const [allUsers, setAllUsers] = useState([
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Doe",
-            email: "john.doe@example.com"
-        },
-        {
-            id: "2",
-            firstName: "Alice",
-            lastName: "Smith",
-            email: "alice.smith@example.com"
-        },
-        {
-            id: "3",
-            firstName: "Bob",
-            lastName: "Johnson",
-            email: "bob.johnson@example.com"
-        }
-    ])
+    useEffect(() => {
+        (async () => {
+            const res = await fetch(`http://localhost:3001/user`)
+            const data = await res.json()
+            setAllUsers(data)
+        })()
+    }, [])
 
+    // if (allUsers) return <p>Wczytywanie....</p>
 
     return(
         <>
