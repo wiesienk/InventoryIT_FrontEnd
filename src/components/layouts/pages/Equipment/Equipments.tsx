@@ -1,36 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import { AllEquipmentResponse } from 'types';
 import {Btn} from "../../../common/Btn";
 
 export const Equipments = () => {
 
-    interface Equipment{
-        id: string;
-        type: string;
-        name: string;
-        username: string;
-    }
 
-    const [equipments, setEquipments] = useState([
-        {
-            id: "223131",
-            type: "Laptop",
-            name: "Dell XPS 13",
-            username: "user1"
-        },
-        {
-            id: "2231sd31",
-            type: "Smartphone",
-            name: "iPhone 12",
-            username: "user2"
-        },
-        {
-            id: "ddddsa",
-            type: "Tablet",
-            name: "iPad Pro",
-            username: "user3"
-        }
-    ])
+    const [equipments, setEquipments] = useState<AllEquipmentResponse[]>([])
 
+    useEffect(() => {
+        (async () => {
+            const res = await fetch(`http://localhost:3001/equipment`)
+            const data = await res.json()
+            setEquipments(data)
+        })()
+    }, [])
 
     return(
         <>
@@ -41,6 +24,7 @@ export const Equipments = () => {
                     <th className="table__header">LP</th>
                     <th className="table__header">Rodzaj</th>
                     <th className="table__header">Nazwa</th>
+                    <th className="table__header">Numer Seryjny</th>
                     <th className="table__header">Użytkownik</th>
                 </tr>
                 </thead>
@@ -50,7 +34,9 @@ export const Equipments = () => {
                         <td>{index + 1}</td>
                         <td>{item.type}</td>
                         <td>{item.name}</td>
-                        <td>{item.username}</td>
+                        <td>{item.serialNumber}</td>
+                        <td>{item.userLastName}</td>
+                        <td><Btn text="ℹ️" to={`/equipments/${item.id}`}/></td>
                     </tr>
                 ))}
                 </tbody>

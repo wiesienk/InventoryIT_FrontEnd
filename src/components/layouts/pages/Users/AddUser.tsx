@@ -74,7 +74,7 @@ export const AddUser = ()=> {
             </div>
             <button type="submit">Zapisz</button>
             {savedUser && (
-                <p>Zapisano użytkownika o ID: {savedUser.id} i emailu: {savedUser.email}</p>
+                <p>Zapisano użytkownika</p>
             )}
         </form>
     )
