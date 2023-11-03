@@ -87,6 +87,7 @@ export const UserDetails: React.FC = () => {
                     <label>
                         First Name:
                         <input
+                            required={true}
                             type="text"
                             name="firstName"
                             value={editedUser.firstName}
@@ -96,6 +97,7 @@ export const UserDetails: React.FC = () => {
                     <label>
                         Last Name:
                         <input
+                            required={true}
                             type="text"
                             name="lastName"
                             value={editedUser.lastName}
@@ -105,6 +107,7 @@ export const UserDetails: React.FC = () => {
                     <label>
                         Email:
                         <input
+                            required={true}
                             type="text"
                             name="email"
                             value={editedUser.email}

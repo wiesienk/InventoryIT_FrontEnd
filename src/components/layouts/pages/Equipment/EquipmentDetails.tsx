@@ -92,6 +92,7 @@ export const EquipmentDetails: React.FC = () =>   {
                 <label>
                     Nazwa:
                     <input
+                        required={true}
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -100,6 +101,7 @@ export const EquipmentDetails: React.FC = () =>   {
                 <label>
                     Rodzaj Wyposażenia:
                     <select
+                        required={true}
                         value={formData.type}
                         onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                     >
@@ -113,6 +115,7 @@ export const EquipmentDetails: React.FC = () =>   {
                 <label>
                     Numer Seryjny:
                     <input
+                        required={true}
                         type="text"
                         value={formData.serialNumber}
                         onChange={(e) =>
@@ -123,6 +126,7 @@ export const EquipmentDetails: React.FC = () =>   {
                 <label>
                     Użytkownik:
                     <select
+                        required={true}
                         value={formData.userID}
                         onChange={(e) => setFormData({ ...formData, userID: e.target.value })}
                     >
