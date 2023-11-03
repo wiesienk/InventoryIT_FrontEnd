@@ -49,7 +49,7 @@ export const AddEquipment = ()=> {
             <div>
                 <label>
                     Rodzaj Wyposażenia:
-                    <select name="type" value={formData.type} onChange={handleInputChange}>
+                    <select required={true} name="type" value={formData.type} onChange={handleInputChange}>
                         <option value="" disabled>
                             Wybierz rodzaj wyposażenia
                         </option>
@@ -64,19 +64,19 @@ export const AddEquipment = ()=> {
             <div>
                 <label>
                     Nazwa:
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+                    <input required={true} type="text" name="name" value={formData.name} onChange={handleInputChange} />
                 </label>
             </div>
             <div>
                 <label>
                     Numer Seryjny:
-                    <input type="text" name="serialNumber" value={formData.serialNumber} onChange={handleInputChange} />
+                    <input required={true} type="text" name="serialNumber" value={formData.serialNumber} onChange={handleInputChange} />
                 </label>
             </div>
             <div>
                 <label>
                     Użytkownik:
-                    <select name="userID" value={formData.userID} onChange={handleInputChange}>
+                    <select required={true} name="userID" value={formData.userID} onChange={handleInputChange}>
                         <option value="" disabled>
                             Wybierz użytkownika
                         </option>

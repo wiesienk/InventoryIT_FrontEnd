@@ -17,8 +17,6 @@ export const Users = () => {
         })()
     }, [])
 
-    // if (allUsers) return <p>Wczytywanie....</p>
-
     return(
         <>
             <Btn text="Dodaj nowego uzytkonika" to="add-user"/>
@@ -32,7 +30,8 @@ export const Users = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {allUsers.map((item, index) => (
+                {
+                    allUsers.map((item, index) => (
                     <tr key={item.id}>
                         <td>{index + 1}</td>
                         <td>{item.firstName}</td>
