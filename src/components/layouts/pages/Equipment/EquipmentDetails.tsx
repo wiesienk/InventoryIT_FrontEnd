@@ -87,9 +87,9 @@ export const EquipmentDetails: React.FC = () =>   {
 
     if (editMode) {
         return (
-            <div>
+            <div className='editForm'>
                 <h2>Edytuj Wyposażenie</h2>
-                <label>
+                <div><label>
                     Nazwa:
                     <input
                         required={true}
@@ -97,22 +97,24 @@ export const EquipmentDetails: React.FC = () =>   {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
-                </label>
-                <label>
-                    Rodzaj Wyposażenia:
-                    <select
-                        required={true}
-                        value={formData.type}
-                        onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    >
-                        {EquipmentTypes.map((option, index) => (
-                            <option key={index} value={option.toLowerCase()}>
-                                {option}
-                            </option>
-                        ))}
-                    </select>
-                </label>
-                <label>
+                </label></div>
+                <div>
+                    <label>
+                        Rodzaj Wyposażenia:
+                        <select
+                            required={true}
+                            value={formData.type}
+                            onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                        >
+                            {EquipmentTypes.map((option, index) => (
+                                <option key={index} value={option.toLowerCase()}>
+                                    {option}
+                                </option>
+                            ))}
+                        </select>
+                    </label>
+                </div>
+                <div><label>
                     Numer Seryjny:
                     <input
                         required={true}
@@ -122,8 +124,8 @@ export const EquipmentDetails: React.FC = () =>   {
                             setFormData({ ...formData, serialNumber: e.target.value })
                         }
                     />
-                </label>
-                <label>
+                </label></div>
+                <div><label>
                     Użytkownik:
                     <select
                         required={true}
@@ -136,15 +138,15 @@ export const EquipmentDetails: React.FC = () =>   {
                             </option>
                         ))}
                     </select>
-                </label>
-                <button onClick={handleSave}>Zapisz</button>
-                <button onClick={() => setEditMode(false)}>Anuluj</button>
+                </label></div>
+                <button className='btn' onClick={handleSave}>Zapisz</button>
+                <button className='btn' onClick={() => setEditMode(false)}>Anuluj</button>
             </div>
         );
     }
 
     return (
-        <div>
+        <div className='details'>
             <h2>{equipment.name}</h2>
             <p>Rodzaj Wyposażenia: {equipment.type}</p>
             <p>Numer Seryjny: {equipment.serialNumber}</p>
@@ -152,8 +154,8 @@ export const EquipmentDetails: React.FC = () =>   {
                 Użytkownik: {equipment.user.firstName} {equipment.user.lastName}
             </p>
             <p>Email: {equipment.user.email}</p>
-            <button onClick={handleEdit}>Edytuj</button>
-            <button onClick={handleDelete}>Usuń</button>
+            <button className='btn' onClick={handleEdit}>Edytuj</button>
+            <button className='btn' onClick={handleDelete}>Usuń</button>
         </div>
     );
 };

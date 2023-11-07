@@ -19,7 +19,7 @@ export const Users = () => {
 
     return(
         <>
-            <Btn text="Dodaj nowego uzytkonika" to="add-user"/>
+            <div className="addbtn"><Btn text="Dodaj nowego uzytkonika" to="add-user"/></div>
             <table className="table">
                 <thead>
                 <tr>
