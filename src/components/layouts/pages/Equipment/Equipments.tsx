@@ -1,23 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { AllEquipmentResponse } from 'types';
-import {Btn} from "../../../common/Btn";
+import { Btn } from '../../../common/Btn';
 
 export const Equipments = () => {
-
-
-    const [equipments, setEquipments] = useState<AllEquipmentResponse[]>([])
+    const [equipments, setEquipments] = useState<AllEquipmentResponse[]>([]);
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/equipment`)
-            const data = await res.json()
-            setEquipments(data)
-        })()
-    }, [])
+            const res = await fetch('http://localhost:3001/equipment');
+            const data = await res.json();
+            setEquipments(data);
+        })();
+    }, []);
 
-    return(
+    return (
         <>
-            <Btn text="Dodaj nowy sprzęt" to="add-equipment"/>
+            <div className="addbtn">
+                <Btn text="Dodaj nowy sprzęt" to="add-equipment"/>
+            </div>
             <table className="table">
                 <thead>
                 <tr>
@@ -36,12 +36,13 @@ export const Equipments = () => {
                         <td>{item.name}</td>
                         <td>{item.serialNumber}</td>
                         <td>{item.userLastName}</td>
-                        <td><Btn text="ℹ️" to={`/equipments/${item.id}`}/></td>
+                        <td>
+                            <Btn text="ℹ️" to={`/equipments/${item.id}`}/>
+                        </td>
                     </tr>
                 ))}
                 </tbody>
             </table>
         </>
-
-    )
-}
+    );
+};

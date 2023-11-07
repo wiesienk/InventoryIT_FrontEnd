@@ -38,7 +38,7 @@ export const AddUser = ()=> {
             });
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='addForm' onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="firstName">Imię:</label>
                 <input
@@ -72,7 +72,7 @@ export const AddUser = ()=> {
                     required
                 />
             </div>
-            <button type="submit">Zapisz</button>
+            <button className='btn' type="submit">Zapisz</button>
             {savedUser && (
                 <p>Zapisano użytkownika</p>
             )}

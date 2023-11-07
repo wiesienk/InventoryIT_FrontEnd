@@ -25,7 +25,7 @@ export const UserDetails: React.FC = () => {
                 console.log(error);
             }
         })();
-    }, [id]);
+    }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (editedUser) {
@@ -55,23 +55,20 @@ export const UserDetails: React.FC = () => {
     };
 
 
-    const handleDeleteUser = async () => {
-        const confirmDelete = window.confirm('Czy na pewno usunąć użytkownika?');
+    const handleDelete = async () => {
+        const confirmDelete = window.confirm('Czy na pewno usunąć sprzęt?');
         if (confirmDelete) {
             try {
-                const response = await fetch(`http://localhost:3001/user/${id}`, {
+                await fetch(`http://localhost:3001/user/${id}`, {
                     method: 'DELETE',
                 });
-                if (response.ok) {
-                    setSuccessMessage('Usunięto użytkownika');
-                    setUser({id:"DELETED",email:"DELETED",lastName:"DELETED",firstName:"DELETED"})
-                } else {
-                    throw new Error('Unable to delete user');
-                }
+                setUser({id: '', firstName: '', lastName: '', email: ''})
+                setSuccessMessage('Usunięto użytkownika')
+
             } catch (error) {
-                console.log(error);
-            }
-        }
+                console.error('Error deleting equipment', error);
+            }}
+
     };
 
     if (!user) {
@@ -79,43 +76,49 @@ export const UserDetails: React.FC = () => {
     }
 
     return (
-        <div>
-            <h2>User Details</h2>
+        <div className='editForm'>
+            <h2>Szczegóły Użytkownika</h2>
             {isEditing ? (
                 <>
                     <p>ID: {user.id}</p>
-                    <label>
-                        First Name:
-                        <input
-                            required={true}
-                            type="text"
-                            name="firstName"
-                            value={editedUser.firstName}
-                            onChange={handleInputChange}
-                        />
-                    </label>
-                    <label>
-                        Last Name:
-                        <input
-                            required={true}
-                            type="text"
-                            name="lastName"
-                            value={editedUser.lastName}
-                            onChange={handleInputChange}
-                        />
-                    </label>
-                    <label>
-                        Email:
-                        <input
-                            required={true}
-                            type="text"
-                            name="email"
-                            value={editedUser.email}
-                            onChange={handleInputChange}
-                        />
-                    </label>
-                    <button onClick={handleSaveChanges}>Zapisz zmiany</button>
-                    <button onClick={() => setIsEditing(false)}>Anuluj</button>
+                    <div>
+                        <label>
+                            First Name:
+                            <input
+                                required={true}
+                                type="text"
+                                name="firstName"
+                                value={editedUser.firstName}
+                                onChange={handleInputChange}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Last Name:
+                            <input
+                                required={true}
+                                type="text"
+                                name="lastName"
+                                value={editedUser.lastName}
+                                onChange={handleInputChange}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Email:
+                            <input
+                                required={true}
+                                type="text"
+                                name="email"
+                                value={editedUser.email}
+                                onChange={handleInputChange}
+                            />
+                        </label>
+                    </div>
+                    <button className='btn' onClick={handleSaveChanges}>Zapisz zmiany</button>
+                    <button className='btn' onClick={() => setIsEditing(false)}>Anuluj</button>
                 </>
             ) : (
                 <>
@@ -123,8 +126,8 @@ export const UserDetails: React.FC = () => {
                     <p>First Name: {user.firstName}</p>
                     <p>Last Name: {user.lastName}</p>
                     <p>Email: {user.email}</p>
-                    <button onClick={() => setIsEditing(true)}>Edytuj</button>
-                    <button onClick={handleDeleteUser}>Usuń użytkownika</button>
+                    <button className='btn' onClick={() => setIsEditing(true)}>Edytuj</button>
+                    <button className='btn' onClick={handleDelete}>Usuń użytkownika</button>
                 </>
             )}
             {successMessage && <div>{successMessage}</div>}

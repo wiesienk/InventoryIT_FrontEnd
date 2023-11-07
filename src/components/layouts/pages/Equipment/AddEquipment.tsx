@@ -45,7 +45,7 @@ export const AddEquipment = ()=> {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='addForm'>
             <div>
                 <label>
                     Rodzaj Wyposażenia:
@@ -88,7 +88,7 @@ export const AddEquipment = ()=> {
                     </select>
                 </label>
             </div>
-            <button type="submit">Zapisz</button>
+            <button className='btn' type="submit">Zapisz</button>
             {savedEquipment && <p>Dodano sprzęt</p>}
         </form>
     );

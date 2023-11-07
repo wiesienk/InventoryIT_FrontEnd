@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-transform: uppercase;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table__header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table td {
+    padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.App-link {
-  color: #61dafb;
+.table tbody tr:hover {
+    background-color: #dcdcdc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.addbtn {
+    margin: 50px 0;
+    padding: 10px;
+}
+.addForm {
+    margin: 50px 10px;
+    padding: 10px;
+    font-size: 20px;
+    /*text-transform: uppercase;*/
+}
+.addForm select {
+    margin-left: 10px;
+}
+.addForm input {
+    margin-left: 10px;
+}
+.editForm {
+    font-size: 20px;
+    margin: 50px 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+.editForm input{
+    margin-left: 10px;
+}
+.editForm select{
+    margin-left: 10px;
+}
+.details {
+    font-size: 18px;
+    margin: 50px 5px;
+    padding: 5px;
 }
