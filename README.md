@@ -11,7 +11,7 @@ InventoryIT is an application for managing and tracking computer hardware in a c
 
 ## GIF
 
-![inventoryIt](https://github.com/wiesienk/InventoryIT_FrontEnd/assets/142996283/b8a62eab-d1a9-43c9-b2b7-87fa5cc59664)
+![inventoryIt](https://github.com/wiesienk/InventoryIT_FrontEnd/assets/142996283/b576e732-9773-4461-94f0-37711b4c34be)
 
 ## Author
 
